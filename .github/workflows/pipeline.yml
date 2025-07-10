@@ -30,7 +30,6 @@ jobs:
         run: python zborovi_pipeline.py --map
 
       - name: Commit & push artifacts
-      - name: Commit & push artifacts
         run: |
           git config user.name "NevenaMijatovic"
           git config user.email "nevena@example.com"
@@ -41,3 +40,4 @@ jobs:
           else
             git commit -m "Auto update $(date -u +'%Y-%m-%d %H:%M')"
             git push origin main
+
