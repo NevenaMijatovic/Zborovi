@@ -289,7 +289,16 @@ def make_map():
     if not CSV_PATH.exists():
         log.warning("CSV not found, run pipeline first")
         return
+
+    # ✅ Privremena dijagnostika – koliko kolona ima svaki red
+    with open(CSV_PATH, encoding="utf-8") as f:
+        for i, line in enumerate(f.readlines(), 1):
+            print(f"{i:>3}: {line.strip()} → {line.count(',') + 1} kolona")
+
+    # ✅ Ako sve deluje u redu, učitaj CSV
     df = pd.read_csv(CSV_PATH)
+
+    # ✅ Kreiraj mapu
     m = folium.Map(location=[44.2, 20.9], zoom_start=7)
     for _, r in df.dropna(subset=["lat", "lon"]).iterrows():
         folium.CircleMarker(
@@ -298,6 +307,8 @@ def make_map():
             popup=(f"<b>{r.title}</b><br>{r.date}<br>{r.source_tag}"),
             tooltip=r.title,
         ).add_to(m)
+
+    # ✅ Sačuvaj mapu
     m.save(MAP_PATH)
     log.info("Map saved %s", MAP_PATH)
 
