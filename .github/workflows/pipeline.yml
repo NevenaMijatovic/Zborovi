@@ -39,7 +39,7 @@ jobs:
           git config user.name "NevenaMijatovic"
           git config user.email "nevena.g.mijatovic@gmail.com"
           git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/NevenaMijatovic/Zborovi.git
-          git add zborovi.db zborovi_latest.csv zborovi_map.html
+          git add -f zborovi.db zborovi_latest.csv zborovi_map.html
           if git diff-index --quiet HEAD; then
             echo "Nothing new to commit"
           else
