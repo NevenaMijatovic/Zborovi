@@ -60,7 +60,7 @@ import re
 import sqlite3
 import subprocess
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable, List, Optional, Tuple
 
