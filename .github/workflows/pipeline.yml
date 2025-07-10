@@ -29,6 +29,11 @@ jobs:
       - name: Generate map
         run: python zborovi_pipeline.py --map
 
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      
       - name: Commit & push artifacts
         run: |
           git config user.name "NevenaMijatovic"
@@ -41,4 +46,3 @@ jobs:
             git commit -m "Auto update $(date -u +'%Y-%m-%d %H:%M')"
             git push origin main
           fi
-
