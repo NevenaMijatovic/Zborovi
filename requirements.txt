@@ -1,0 +1,11 @@
+feedparser
+python-dateutil
+rapidfuzz
+snscrape
+psaw
+savepagenow
+yt_dlp
+geopy
+spacy
+folium
+pandas
