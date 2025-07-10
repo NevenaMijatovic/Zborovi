@@ -316,11 +316,10 @@ def make_map():
 # ‑‑‑ SNAPSHOT CSV ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
 
 def snapshot():
-    with sqlite3.connect(DB_PATH) as c, open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
-        cur = c.execute("SELECT * FROM zborovi")
-        csv.writer(f).writerows([col[0] for col in cur.description])  # header
-        csv.writer(f).writerows(cur.fetchall())
-    log.info("Snapshot → %s", CSV_PATH)
+    with sqlite3.connect(DB_PATH) as conn:
+        df = pd.read_sql_query("SELECT * FROM zborovi", conn)
+        df.to_csv(CSV_PATH, index=False, encoding="utf-8")
+        log.info("CSV saved to %s", CSV_PATH)
 
 
 # ‑‑‑ ENTRYPOINT ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
