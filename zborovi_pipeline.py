@@ -159,7 +159,7 @@ def save(row: Tuple):
     with sqlite3.connect(DB_PATH) as c:
         try:
             c.execute(
-                "INSERT OR IGNORE INTO zborovi VALUES (?,?,?,?,?,?,?,?,?,?)",
+                "INSERT OR IGNORE INTO zborovi VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                 row,
             )
         except sqlite3.DatabaseError as e:
@@ -317,7 +317,7 @@ def snapshot():
 def run_all():
     init_db()
     crawl_rss()
-    crawl_twitter()
+#    crawl_twitter()
     crawl_reddit()
     crawl_youtube()
     report_duplicates()
