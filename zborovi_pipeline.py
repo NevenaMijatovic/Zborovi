@@ -77,7 +77,7 @@ from spacy.lang.sr import Serbian
 from yt_dlp import YoutubeDL
 
 # ‑‑‑ CONFIG ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
-START_DATE = datetime(2025, 3, 1)
+START_DATE = datetime(2025, 3, 1, tzinfo=timezone.utc)
 DB_PATH = Path("zborovi.db")
 CSV_PATH = Path("zborovi_latest.csv")
 MAP_PATH = Path("zborovi_map.html")
