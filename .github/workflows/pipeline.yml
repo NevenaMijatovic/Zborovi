@@ -21,7 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python -m spacy download sr_core_news_md
+          python -m spacy download sr_core_news_sm
 
       - name: Run scraper
         run: python zborovi_pipeline.py --run
