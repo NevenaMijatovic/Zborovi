@@ -289,7 +289,7 @@ def make_map():
     if not CSV_PATH.exists():
         log.warning("CSV not found, run pipeline first")
         return
-    df = pd.read_csv(CSV_PATH, header=0, names=[d[1] for d in sqlite3.connect(DB_PATH).execute("PRAGMA table_info(zborovi)").fetchall()])
+    df = pd.read_csv(CSV_PATH)
     m = folium.Map(location=[44.2, 20.9], zoom_start=7)
     for _, r in df.dropna(subset=["lat", "lon"]).iterrows():
         folium.CircleMarker(
