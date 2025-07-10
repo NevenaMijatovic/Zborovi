@@ -40,4 +40,5 @@ jobs:
           else
             git commit -m "Auto update $(date -u +'%Y-%m-%d %H:%M')"
             git push origin main
+          fi
 
