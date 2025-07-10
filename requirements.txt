@@ -6,6 +6,6 @@ psaw
 savepagenow
 yt_dlp
 geopy
-spacy==3.7.4
+spacy
 folium
 pandas
