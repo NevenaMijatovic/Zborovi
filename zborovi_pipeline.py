@@ -318,7 +318,7 @@ def run_all():
     init_db()
     crawl_rss()
 #    crawl_twitter()
-    crawl_reddit()
+#    crawl_reddit()
     crawl_youtube()
     report_duplicates()
     snapshot()
