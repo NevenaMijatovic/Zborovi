@@ -332,6 +332,22 @@ def run_all():
     crawl_youtube()
     report_duplicates()
     snapshot()
+    # TEMP: Dummy unos za test
+    save((
+        eid("Test događaj", "2025-07-01"),
+        "Test događaj",
+        "2025-07-01",
+        "https://example.com",
+        "https://web.archive.org/web/20250701000000/https://example.com",
+        "DUMMY",
+        "test_user",
+        44.7866,
+        20.4489,
+        "test organizator",
+        "test tema"
+    ))
+    log.info("✓ Dummy podatak dodat")
+    log.info("✓ Ubačen red u bazu: %s", row[1])
 
 
 def cli():
