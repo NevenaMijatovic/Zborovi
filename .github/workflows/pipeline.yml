@@ -1,9 +1,9 @@
 name: Daily Zborovi Scrape
 
 on:
-  schedule:
-    - cron: '15 1 * * *'        # 03:15 Europe/Belgrade (01:15 UTC)
-  workflow_dispatch:
+#  schedule:
+#    - cron: '15 1 * * *'        # 03:15 Europe/Belgrade (01:15 UTC)
+#  workflow_dispatch:
 
 jobs:
   build:
